@@ -1,6 +1,6 @@
 ---
 layout: default
-title: CNC
+title: Voron CNC
 nav_order: 90
 has_children: true
 ---

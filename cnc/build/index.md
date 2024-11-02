@@ -1,7 +1,7 @@
 ---
 layout: default
-title: CNC Build
-parent: CNC
+title: Voron CNC Build
+parent: Voron CNC
 nav_order: 2
 has_children: true
 ---
