@@ -11,7 +11,9 @@ grblHAL is a no-compromise, high performance, low cost alternative to parallel-p
 
 grblHAL accepts standards-compliant g-code and has been tested with the output of several CAM tools with no problems. Arcs, circles and helical motion are fully supported, as well as, all other primary g-code commands. Macro functions, variables, and some canned cycles are not supported.
 
-grblHAL requires an outside source for management and feeding gcode.  This is commonly referred to as a "sender" and communicates with grblHAL over a serial port (or serial over USB). See the communication page for more details.
+grblHAL requires an external source for management and feeding gcode.  This is commonly referred to as a "sender" and communicates with grblHAL over a serial port (or serial over USB). See the communication page for more details.
+
+Next: Communication
 
 ---
 

@@ -31,6 +31,13 @@ connectors:
   RaspberryPi:
     pinlabels: [5V, Gnd]
     show_pincount: false
+  DC_Neg_Bond:
+    pinlabels: [Neg1, Neg2, Neg3]
+    pincolors: [BK, BK, BK]
+    show_pincount: false
+  Cooling_Fan:
+    pinlabels: [V+, V-]
+    show_pincount: false
 
 cables:
   P1:
@@ -134,7 +141,31 @@ cables:
     show_equiv: true
     show_name: false
     bgcolor: GY
-
+  N1:
+    wirecount: 1
+    gauge: 20 AWG
+    show_equiv: true
+    show_name: false
+    bgcolor: GY
+  N2:
+    wirecount: 1
+    gauge: 20 AWG
+    show_equiv: true
+    show_name: false
+    bgcolor: GY
+  N3:
+    wirecount: 1
+    gauge: 20 AWG
+    show_equiv: true
+    show_name: false
+    bgcolor: GY
+  Fan_Power:
+    wirecount: 2
+    colors: [RD, BK]
+    gauge: 24 AWG
+    show_equiv: true
+    show_name: false
+    bgcolor: GY
 
 connections:
   -
@@ -189,3 +220,19 @@ connections:
     - 5V_Supply: [5V+, 5V-]
     - 5V2: [1,2]
     - RaspberryPi: [5V, Gnd]
+  -
+    - 5V_Supply: [5V-]
+    - N1: [1]
+    - DC_Neg_Bond: [Neg1]
+  -
+    - 24V_Supply: [24V-]
+    - N2: [1]
+    - DC_Neg_Bond: [Neg2]
+  -
+    - 48V_Supply: [48V-]
+    - N3: [1]
+    - DC_Neg_Bond: [Neg3]
+  -
+    - 24V_Supply: [24V+, 24V-]
+    - Fan_Power: [1, 2]
+    - Cooling_Fan: [V+, V-]

@@ -52,56 +52,56 @@ connectors:
     show_pincount: false
   DM542T_X: 
     pinlabels: [
-      Step+, 
-      Step-, 
-      Dir+, 
-      Dir-, 
-      Enable+, 
-      Enable-, 
-      Alarm+, 
-      Alarm-, 
-      Vcc, 
+      PUL+, 
+      PUL-, 
+      DIR+, 
+      DIR-, 
+      ENA+, 
+      ENA-, 
+      ALM+, 
+      ALM-, 
+      Vdc, 
       Gnd, 
-      Drive_1A, 
-      Drive_1B, 
-      Drive_2A, 
-      Drive_2B 
+      Drive_A+, 
+      Drive_A-, 
+      Drive_B+, 
+      Drive_B-  
     ]
     show_pincount: false
   DM542T_Y:
     pinlabels: [
-      Step+, 
-      Step-, 
-      Dir+, 
-      Dir-, 
-      Enable+, 
-      Enable-, 
-      Alarm+, 
-      Alarm-, 
-      Vcc, 
+      PUL+, 
+      PUL-, 
+      DIR+, 
+      DIR-, 
+      ENA+, 
+      ENA-, 
+      ALM+, 
+      ALM-, 
+      Vdc, 
       Gnd, 
-      Drive_1A, 
-      Drive_1B, 
-      Drive_2A, 
-      Drive_2B 
+      Drive_A+, 
+      Drive_A-, 
+      Drive_B+, 
+      Drive_B-  
     ]
     show_pincount: false
   DM542T_Z:
     pinlabels: [
-      Step+, 
-      Step-, 
-      Dir+, 
-      Dir-, 
-      Enable+, 
-      Enable-, 
-      Alarm+, 
-      Alarm-, 
-      Vcc, 
+      PUL+, 
+      PUL-, 
+      DIR+, 
+      DIR-, 
+      ENA+, 
+      ENA-, 
+      ALM+, 
+      ALM-, 
+      Vdc, 
       Gnd, 
-      Drive_1A, 
-      Drive_1B, 
-      Drive_2A, 
-      Drive_2B 
+      Drive_A+, 
+      Drive_A-, 
+      Drive_B+, 
+      Drive_B- 
     ]
     show_pincount: false
   FlexiHAL:
@@ -399,37 +399,37 @@ connections:
   -
     - 48V_Supply: [48V+, 48V-]
     - 48V1: [1,2]
-    - DM542T_X: [Vcc, Gnd]
+    - DM542T_X: [Vdc, Gnd]
   -
     - 48V_Supply: [48V+, 48V-]
     - 48V2: [1,2]
-    - DM542T_Y: [Vcc, Gnd]
+    - DM542T_Y: [Vdc, Gnd]
   -
     - 48V_Supply: [48V+, 48V-]
     - 48V3: [1,2]
-    - DM542T_Z: [Vcc, Gnd]
+    - DM542T_Z: [Vdc, Gnd]
   -
     - FlexiHAL: [Output_DriveX-Step+, Output_DriveX-Step-, Output_DriveX-Dir+, Output_DriveX-Dir-, Output_DriveX-5V, Output_DriveX-Enable-]
     - DrvConX: [1,2,3,4,5,6]
-    - DM542T_X: [Step+, Step-, Dir+, Dir-, Enable+, Enable-]
+    - DM542T_X: [PUL+, PUL-, DIR+, DIR-, ENA+, ENA-]
   -
     - FlexiHAL: [Output_DriveY-Step+, Output_DriveY-Step-, Output_DriveY-Dir+, Output_DriveY-Dir-, Output_DriveY-5V, Output_DriveY-Enable-]
     - DrvConY: [1,2,3,4,5,6]
-    - DM542T_Y: [Step+, Step-, Dir+, Dir-, Enable+, Enable-]
+    - DM542T_Y: [PUL+, PUL-, DIR+, DIR-, ENA+, ENA-]
   -
     - FlexiHAL: [Output_DriveZ-Step+, Output_DriveZ-Step-, Output_DriveZ-Dir+, Output_DriveZ-Dir-, Output_DriveZ-5V, Output_DriveZ-Enable-]
     - DrvConZ: [1,2,3,4,5,6]
-    - DM542T_Z: [Step+, Step-, Dir+, Dir-, Enable+, Enable-]
+    - DM542T_Z: [PUL+, PUL-, DIR+, DIR-, ENA+, ENA-]
   -
-    - DM542T_X: [Drive_1A, Drive_1B, Drive_2A, Drive_2B]
+    - DM542T_X: [Drive_A+, Drive_A-, Drive_B+, Drive_B-]
     - MotConX: [1,2,3,4]
     - Motor_X: [1A, 1B, 2A, 2B]
   -
-    - DM542T_Y: [Drive_1A, Drive_1B, Drive_2A, Drive_2B]
+    - DM542T_Y: [Drive_A+, Drive_A-, Drive_B+, Drive_B-]
     - MotConY: [1,2,3,4]
     - Motor_Y: [1A, 1B, 2A, 2B]
   -
-    - DM542T_Z: [Drive_1A, Drive_1B, Drive_2A, Drive_2B]
+    - DM542T_Z: [Drive_A+, Drive_A-, Drive_B+, Drive_B-]
     - MotConZ: [1,2,3,4]
     - Motor_Z: [1A, 1B, 2A, 2B]
   -
