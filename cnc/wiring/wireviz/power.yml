@@ -15,8 +15,8 @@ connectors:
   EStop_Button:
     pinlabels: [NO1, NO2, NC1, NC2]
     show_pincount: false
-  Spindle:
-    pinlabels: [Line, Neutral, Earth]
+  H100_VFD:
+    pinlabels: [Line, Neutral, Earth, U, V, W]
     show_pincount: false
   24V_Supply:
     pinlabels: [Line, Neutral, Earth, 24V+, 24V-]
@@ -37,6 +37,15 @@ connectors:
     show_pincount: false
   Cooling_Fan:
     pinlabels: [V+, V-]
+    show_pincount: false
+  DIN_Rail:
+    pinlabels: [Earth]
+    show_pincount: false
+  Electronics_Frame:
+    pinlabels: [Earth]
+    show_pincount: false
+  Spindle:
+    pinlabels: [Earth, U, V, W]
     show_pincount: false
 
 cables:
@@ -112,6 +121,22 @@ cables:
     show_equiv: true
     show_name: false
     bgcolor: GY
+  E1:
+    wirecount: 1
+    colors: [GN]
+    wirelabels: [Earth]
+    gauge: 16 AWG
+    show_equiv: true
+    show_name: false
+    bgcolor: GY
+  E2:
+    wirecount: 1
+    colors: [GN]
+    wirelabels: [Earth]
+    gauge: 16 AWG
+    show_equiv: true
+    show_name: false
+    bgcolor: GY
   5V1:
     wirecount: 2
     colors: [RD, BK]
@@ -141,20 +166,23 @@ cables:
     show_equiv: true
     show_name: false
     bgcolor: GY
-  N1:
+  NB1:
     wirecount: 1
+    colors: [BK]
     gauge: 20 AWG
     show_equiv: true
     show_name: false
     bgcolor: GY
-  N2:
+  NB2:
     wirecount: 1
+    colors: [BK]
     gauge: 20 AWG
     show_equiv: true
     show_name: false
     bgcolor: GY
-  N3:
+  NB3:
     wirecount: 1
+    colors: [BK]
     gauge: 20 AWG
     show_equiv: true
     show_name: false
@@ -163,6 +191,13 @@ cables:
     wirecount: 2
     colors: [RD, BK]
     gauge: 24 AWG
+    show_equiv: true
+    show_name: false
+    bgcolor: GY
+  VFD_Spindle:
+    wirecount: 4
+    colors: [GN, GY, GY, GY]
+    gauge: 18 AWG
     show_equiv: true
     show_name: false
     bgcolor: GY
@@ -195,7 +230,7 @@ connections:
   -
     - Power_Wagos: [L2, N2, G2]
     - P6: [1,2,3]
-    - Spindle: [Line, Neutral, Earth]
+    - H100_VFD: [Line, Neutral, Earth]
   -
     - Power_Wagos: [L3, N3, G3]
     - P7: [1,2,3]
@@ -222,17 +257,29 @@ connections:
     - RaspberryPi: [5V, Gnd]
   -
     - 5V_Supply: [5V-]
-    - N1: [1]
+    - NB1: [1]
     - DC_Neg_Bond: [Neg1]
   -
     - 24V_Supply: [24V-]
-    - N2: [1]
+    - NB2: [1]
     - DC_Neg_Bond: [Neg2]
   -
     - 48V_Supply: [48V-]
-    - N3: [1]
+    - NB3: [1]
     - DC_Neg_Bond: [Neg3]
   -
     - 24V_Supply: [24V+, 24V-]
     - Fan_Power: [1, 2]
     - Cooling_Fan: [V+, V-]
+  -
+    - DIN_Rail: [Earth]
+    - E1: [1]
+    - Electronics_Frame: [Earth]
+  -
+    - Electronics_Frame: [Earth]
+    - E2: [1]
+    - Power_Wagos: [G5]
+  -
+    - H100_VFD: [Earth, U, V, W]
+    - VFD_Spindle: [1,2,3,4]
+    - Spindle: [Earth, U, V, W]
