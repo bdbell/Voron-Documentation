@@ -22,7 +22,7 @@ connectors:
     pinlabels: [Line, Neutral, Earth, 24V+, 24V-]
     show_pincount: false
   48V_Supply:
-    pinlabels: [Line, Neutral, Earth, 48V+, 48V-]
+    pinlabels: [Line, Neutral, Earth, 48V+1, 48V+2, 48V-1, 48V-2]
     show_pincount: false
   Power_Wagos:
     type: Wago 5-slot (3x)
@@ -35,6 +35,10 @@ connectors:
   5V_Distribution:
     type: Wago 5-slot (2x)
     pinlabels: [5V+1, 5V+2, 5V+3, 5V+4, 5V+5, 5V-1, 5V-2, 5V-3, 5V-4, 5V-5]
+    show_pincount: false
+  24V_Distribution:
+    type: Wago 3-slot (2x)
+    pinlabels: [24V+1, 24V+2, 24V+3, 24V-1, 24V-2, 24V-3]
     show_pincount: false
   RaspberryPi:
     pinlabels: [5V, Gnd]
@@ -194,6 +198,14 @@ cables:
     show_equiv: true
     show_name: false
     bgcolor: GY
+  24V1:
+    wirecount: 2
+    colors: [RD, BK]
+    wirelabels: [24V+, 24V-]
+    gauge: 20 AWG
+    show_equiv: true
+    show_name: false
+    bgcolor: GY
   ES1:
     wirecount: 1
     colors: [RD]
@@ -313,15 +325,19 @@ connections:
     - NB1: [1]
     - DC_Neg_Bond: [Neg1]
   -
-    - 24V_Supply: [24V-]
+    - 24V_Distribution: [24V-3]
     - NB2: [1]
     - DC_Neg_Bond: [Neg2]
   -
-    - 48V_Supply: [48V-]
+    - 48V_Supply: [48V-2]
     - NB3: [1]
     - DC_Neg_Bond: [Neg3]
   -
     - 24V_Supply: [24V+, 24V-]
+    - 24V1: [1, 2]
+    - 24V_Distribution: [24V+1, 24V-1]
+  -
+    - 24V_Distribution: [24V+2, 24V-2]
     - Fan_Power: [1, 2]
     - Cooling_Fan: [V+, V-]
   -
