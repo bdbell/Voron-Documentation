@@ -25,13 +25,22 @@ connectors:
     pinlabels: [Line, Neutral, Earth, 48V+, 48V-]
     show_pincount: false
   Power_Wagos:
+    type: Wago 5-slot (3x)
     pinlabels: [L1, L2, L3, L4, L5, N1, N2, N3, N4, N5, G1, G2, G3, G4, G5]
-    pincolors: [BN, BN, BN, BN, BN, BU, BU, BU, BU, BU, GN, GN, GN, GN, GN]
+    show_pincount: false
+  Power_Main:
+    type: Wago 3-slot (1x)
+    pinlabels: [L1, L2, L3]
+    show_pincount: false
+  5V_Distribution:
+    type: Wago 5-slot (2x)
+    pinlabels: [5V+1, 5V+2, 5V+3, 5V+4, 5V+5, 5V-1, 5V-2, 5V-3, 5V-4, 5V-5]
     show_pincount: false
   RaspberryPi:
     pinlabels: [5V, Gnd]
     show_pincount: false
   DC_Neg_Bond:
+    type: Wago 3-slot (1x)
     pinlabels: [Neg1, Neg2, Neg3]
     pincolors: [BK, BK, BK]
     show_pincount: false
@@ -121,6 +130,30 @@ cables:
     show_equiv: true
     show_name: false
     bgcolor: GY
+  P10:
+    wirecount: 1
+    colors: [BN]
+    wirelabels: [Line]
+    gauge: 16 AWG
+    show_equiv: true
+    show_name: false
+    bgcolor: GY
+  P11:
+    wirecount: 1
+    colors: [BN]
+    wirelabels: [Line]
+    gauge: 16 AWG
+    show_equiv: true
+    show_name: false
+    bgcolor: GY
+  P12:
+    wirecount: 1
+    colors: [BU]
+    wirelabels: [Neutral]
+    gauge: 16 AWG
+    show_equiv: true
+    show_name: false
+    bgcolor: GY
   E1:
     wirecount: 1
     colors: [GN]
@@ -146,6 +179,14 @@ cables:
     show_name: false
     bgcolor: GY
   5V2:
+    wirecount: 2
+    colors: [RD, BK]
+    wirelabels: [5V+, 5V-]
+    gauge: 20 AWG
+    show_equiv: true
+    show_name: false
+    bgcolor: GY
+  5V3:
     wirecount: 2
     colors: [RD, BK]
     wirelabels: [5V+, 5V-]
@@ -209,6 +250,10 @@ connections:
     - Power_Switch: [Line_In, Neutral_In]
   -
     - Power_Switch: [Line_Out]
+    - P10: [1]
+    - Power_Main: [L1]
+  -
+    - Power_Main: [L2]
     - P2: [1]
     - EStop_Relay: [Relay_Com]
   - 
@@ -216,9 +261,13 @@ connections:
     - P3: [1]
     - Power_Wagos: [L1]
   -
-    - Power_Switch: [Line_Out, Neutral_Out]
-    - P4: [1,2]
-    - 5V_Supply: [Line_In, Neutral_In]
+    - Power_Main: [L3]
+    - P11: [1]
+    - 5V_Supply: [Line_In]
+  -
+    - 5V_Supply: [Neutral_In]
+    - P12: [1]
+    - Power_Wagos: [N5]
   -
     - Power_Inlet: [Earth]
     - P5: [1]
@@ -242,9 +291,13 @@ connections:
   -
     - 5V_Supply: [5V+, 5V-]
     - 5V1: [1,2]
+    - 5V_Distribution: [5V+1, 5V-1]
+  -
+    - 5V_Distribution: [5V+2, 5V-2]
+    - 5V2: [1,2]
     - EStop_Relay: [5V+, 5V-]
   -
-    - 5V_Supply: [5V+]
+    - 5V_Distribution: [5V+4]
     - ES1: [1]
     - EStop_Button: [NC1]
   -
@@ -252,11 +305,11 @@ connections:
     - ES2: [1]
     - EStop_Relay: [Signal]
   -
-    - 5V_Supply: [5V+, 5V-]
-    - 5V2: [1,2]
+    - 5V_Distribution: [5V+3, 5V-3]
+    - 5V3: [1,2]
     - RaspberryPi: [5V, Gnd]
   -
-    - 5V_Supply: [5V-]
+    - 5V_Distribution: [5V-4]
     - NB1: [1]
     - DC_Neg_Bond: [Neg1]
   -
