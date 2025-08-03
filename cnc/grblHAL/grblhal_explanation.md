@@ -71,3 +71,5 @@ The consistent G-code implementation across all grblHAL platforms means that CAD
 ## Why Choose grblHAL
 
 grblHAL represents a modern approach to CNC control that combines high performance, extensive features, and affordability. The firmware provides capabilities previously available only in expensive commercial systems while maintaining the accessibility and customization potential that makes it suitable for both hobbyists and professional applications. The active development community and broad hardware support ensure that grblHAL will continue advancing alongside evolving manufacturing needs.
+
+---
