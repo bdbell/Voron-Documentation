@@ -10,6 +10,7 @@ A guide for understanding grblHAL.
 
 This documentation is heavily sourced from the grblHAL code, wiki, and from other internet sources and generated using Claude AI.  Suggestions for revision are welcome.
 
+* [Overview](grblhal_explanation.md)
 * [Build and installation](grblhal_build_guide.md)
 * [Setup](grblhal_gsender_setup_guide.md)
 * [Communication](grblhal_communication_guide.md)
