@@ -2,7 +2,7 @@
 layout: default
 title: grblHAL Tool Length Measurement and Tool Change Guide
 parent: grblHAL Guide
-nav_order: 5
+nav_order: 6
 has_children: false
 ---
 

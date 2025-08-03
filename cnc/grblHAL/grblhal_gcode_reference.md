@@ -2,7 +2,7 @@
 layout: default
 title: grblHAL G-Code and M-Code Reference Guide
 parent: grblHAL Guide
-nav_order: 8
+nav_order: 9
 has_children: false
 ---
 

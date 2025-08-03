@@ -2,7 +2,7 @@
 layout: default
 title: grblHAL G100 VFD RS485 Configuration Guide
 parent: grblHAL Guide
-nav_order: 4
+nav_order: 5
 has_children: false
 ---
 

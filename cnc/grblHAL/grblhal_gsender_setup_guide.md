@@ -2,7 +2,7 @@
 layout: default
 title: grblHAL & gSender CNC Machine Setup Guide
 parent: grblHAL Guide
-nav_order: 2
+nav_order: 3
 has_children: false
 ---
 

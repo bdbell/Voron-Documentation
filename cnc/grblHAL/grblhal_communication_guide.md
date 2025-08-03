@@ -2,7 +2,7 @@
 layout: default
 title: grblHAL Communication Setup Guide
 parent: grblHAL Guide
-nav_order: 3
+nav_order: 4
 has_children: false
 ---
 
